@@ -1,25 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { useGlobalFetch } from "./utils/hooks";
+import { Provider } from "./Context";
+import Router from "./Router";
 
 function App() {
+  const {isLoading} = useGlobalFetch();
+  console.log(isLoading);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider>
+      <Router/>
+    </Provider>
   );
 }
 
