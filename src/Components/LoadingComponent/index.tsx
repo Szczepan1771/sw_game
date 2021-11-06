@@ -1,27 +1,25 @@
 import React from "react";
-import { CircularProgress, Box } from "@mui/material";
-import { theme } from "../../utils/theme";
+import {CircularProgress, Box} from "@mui/material";
+import {makeStyles} from "@mui/styles";
 
-const LoadingComponent = () => {
-  return (
-    <Box
-      style={{
+const useStyles = makeStyles(() => ({
+    container: {
         width: "100vw",
         height: "100vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: theme.black
-      }}
-    >
-      <CircularProgress
-        size={200}
-        style={{
-          color: theme.primaryYellow
-        }}
-      />
-    </Box>
-  )
+        backgroundColor: "#000"
+    }
+}))
+
+const LoadingComponent = () => {
+    const c = useStyles()
+    return (
+        <Box className={c.container}>
+            <CircularProgress style={{color: "#FFE81F"}} size={200}/>
+        </Box>
+    )
 }
 
 export default LoadingComponent

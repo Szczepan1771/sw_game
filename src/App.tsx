@@ -1,17 +1,16 @@
 import React from 'react';
-import './App.css';
-import { useGlobalFetch } from "./utils/hooks";
-import { Provider } from "./Context";
+import {Provider} from "./Context";
 import Router from "./Router";
+import { ThemeProvider, withTheme } from '@mui/styles'
+import theme from "./utils/theme";
 
 function App() {
-  const {isLoading} = useGlobalFetch();
-  console.log(isLoading);
-  return (
-    <Provider>
-      <Router/>
-    </Provider>
-  );
+    return (
+        <Provider>
+            <ThemeProvider theme={theme}/>
+            <Router/>
+        </Provider>
+    );
 }
 
-export default App;
+export default withTheme(App);

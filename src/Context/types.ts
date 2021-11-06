@@ -4,7 +4,7 @@ const SET_SW_DATA = "SET_SW_DATA";
 
 type PayloadSetSWDataActionType = {
   key: StoreKeyType,
-  values: StoreType[PayloadSetSWDataActionType["key"]][]
+  values: StoreType[PayloadSetSWDataActionType["key"]]
 }
 
 type SetSWDataAction = {
