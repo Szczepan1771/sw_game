@@ -8,6 +8,10 @@ const initialStore: StoreType = {
   starships: []
 }
 
+type ProviderType = {
+  initialValues?: StoreType
+}
+
 const StoreContext = createContext<StoreType | undefined>(undefined);
 const DispatchContext = createContext<React.Dispatch<ActionsType> | undefined>(undefined);
 
@@ -28,8 +32,8 @@ const useDispatch = (): React.Dispatch<ActionsType> => {
   return dispatch;
 }
 
-const Provider: React.FC = ({children}) => {
-  const [state, dispatch] = useReducer(reducer, initialStore);
+const Provider: React.FC<ProviderType> = ({children, initialValues = initialStore}) => {
+  const [state, dispatch] = useReducer(reducer, initialValues);
 
   return (
     <StoreContext.Provider value={state}>

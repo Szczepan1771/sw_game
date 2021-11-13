@@ -1,4 +1,4 @@
-import {queryParser, messageParser, getRandomNumber, errorMessageParser, selectWinner} from "../../utils";
+import { queryParser, messageParser, getRandomNumber, errorMessageParser } from "../../utils";
 
 const ERROR_MESSAGE = "Error: Custom error message";
 const TEST_QUERY = "/people";
