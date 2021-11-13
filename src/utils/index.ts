@@ -34,7 +34,7 @@ const queryParser = <QueryType>(query: QueryType) => {
 }
 
 const messageParser = (message: string) => {
-    return message.replaceAll("Error: ", "");
+    return message.replace("Error: ", "");
 }
 
 const selectWinner = (firstValue: string, secondValue: string): WinnerType => {
